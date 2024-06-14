@@ -20,7 +20,14 @@ export default function Form() {
   })
 
   const onSubmit = (data: z.infer<typeof FormSchema>) => {
-    console.log(data);
+    // Post data to server
+    fetch('http://localhost:3000/api/form', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    })
     reset();
   }
 
