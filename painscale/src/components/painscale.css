@@ -1,0 +1,112 @@
+.painscale-radio-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.vert-lines-container {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  width: calc(100% - 2rem);
+  margin: 0 auto;
+}
+
+
+.line-radio-container {
+  display: flex;
+  position: relative;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+svg {
+  width: 2rem;
+  height: 2rem;
+  stroke: blue;
+}
+
+.painscale-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem
+}
+
+.hori-line {
+  height: 2px;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  background: #e0e0e0;
+}
+
+.emojies-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.vert-line {
+  width: 1px;
+  height: 20px;
+  background: #e0e0e0;
+}
+
+.colored-line {
+  grid-column: span 2;
+  height: 10px;
+  border-radius: 2px;
+  border-style: solid;
+  border-width: 2px;
+  border-bottom-width: 0;
+}
+
+.colored-lines-container {
+  display: grid;
+  width: calc(100% - 2rem);
+  margin: 0 auto;
+  grid-template-columns: repeat(10, 1fr);
+}
+
+.painscale-radio {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.text-container {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+}
+
+.text-container > div {
+  font-size: 0.8rem;
+}
+
+.text-container > div:not(:first-child, :last-child) {
+  text-align: center;
+}
+
+.text-container > div:last-child {
+  text-align: right;
+}
+
+@media (max-width: 768px) {
+  label {
+    font-size: 0.8rem;
+  }
+  svg {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+  .vert-lines-container {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    width: calc(100% - 1rem);
+    margin: 0 auto;
+  }
+}
