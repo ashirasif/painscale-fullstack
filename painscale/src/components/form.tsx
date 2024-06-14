@@ -3,9 +3,10 @@ import { z } from 'zod'
 import "./form.css"
 import Painscale from './painscale'
 import { zodResolver } from '@hookform/resolvers/zod'
+import toast from 'react-hot-toast'
 
 
-export const FormSchema = z.object({
+const FormSchema = z.object({
   weightLoss: z.string({message:"Required"}).min(2).max(3),
   fever: z.string({message:"Required"}).min(2).max(3),
   cough: z.string({message:"Required"}).min(2).max(3),
@@ -21,14 +22,25 @@ export default function Form() {
 
   const onSubmit = (data: z.infer<typeof FormSchema>) => {
     // Post data to server
-    fetch('http://localhost:3000/api/form', {
+    console.log(data)
+    fetch('http://localhost:3000/painscale', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
+        'Access-Control-Allow-Origin': '*',
       },
       body: JSON.stringify(data),
-    })
-    reset();
+    }).then((res) => {
+        if (res.ok) {
+          toast.success("Data submitted successfully", { icon: '👏' })
+        } else {
+          toast.error("Failed to submit data", { icon: '😢' })
+        }
+      }).catch((err) => {
+        console.error(err)
+        toast.error("Failed to submit data", { icon: '😢' })
+      })
+    reset()
   }
 
   return (

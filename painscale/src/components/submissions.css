@@ -1,0 +1,88 @@
+.rdt_TableHead > * {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.rdt_TableCol {
+  justify-content: center !important;
+}
+
+.rdt_TableRow:hover {
+  background-color: #f0f0f0;
+  transition: background-color 0.3s;
+}
+
+.rdt_TableCell {
+  justify-content: center !important;
+  font-size: 1rem;
+}
+
+.rdt_Table {
+  padding: 1rem;
+  border: 1px solid #000;
+  border-radius: 10px;
+}
+
+
+.container {
+  max-width: 1200px;
+}
+
+h1 {
+  margin: 0px;
+  margin-top: 1rem;
+}
+
+.rdt_Pagination > * > * > svg {
+  stroke: #000;
+  width: 2rem;
+  height: 2rem;
+}
+
+.rdt_Pagination  > * > svg {
+  width: 2rem;
+  height: 2rem;
+  stroke: #000;
+}
+
+.actions {
+  height: 97px
+}
+
+
+@media (max-width: 768px) {
+  .rdt_TableHead > * {
+    font-size: 1rem;
+  }
+
+  .rdt_TableCell {
+    font-size: 0.8rem;
+  }
+
+  .rdt_Table {
+    padding: 0.5rem;
+  }
+
+  .rdt_Pagination > * > * > svg {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  .rdt_Pagination  > * > svg {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  .container {
+    max-width: 100%;
+    padding: 0 1rem;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .actions {
+    height: 97px
+  }
+}
